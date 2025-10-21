@@ -1,16 +1,25 @@
-#Generic Data Creator
+# Generic Data Creator
 
-Creates records in Aerospike according to the specified JSON 
+This is a small Java-based data generator that writes and reads records to Aerospike using JSON-driven configs.
 
+Key components:
 
-##Example
+- `GenericDataCreator` — entrypoint, config loading, and thread orchestration.
+- `Writer` / `Reader` — worker threads that write/read records per `RecordTemplate` and `KeyGenerator`.
+- `Config.java` — JSON-mapped config model; see `examples/` for runnable samples.
+- `KeyQueue` — optional piped queue for read-what-you-write workloads.
 
+For a developer-focused deep dive, see `docs/architecture.md`.
+
+## Example
+
+```bash
 java -jar DataCreator-1.0.0-jar-with-dependencies.jar ../sample.json
+```
 
 Config JSON sample.json
 
 ```json
-
 {
 	"host" : "127.0.0.1",
 	"port" : 3000,
@@ -90,7 +99,7 @@ Config JSON sample.json
 
 Outputs:
 
-```
+```text
 records.saved.times
              count = 10
          mean rate = 577.49 calls/second
@@ -118,11 +127,11 @@ Avg. Latency: 0.473 ms
 Min Latency: 0.231 ms
 Max Latency: 2.375 ms
 Records/Second: 860.062
-
 ```
+
 And creates:
 
-```
+```text
 aql> set output json
 OUTPUT = JSON
 aql> select * from test.datatypes
@@ -176,13 +185,11 @@ aql> select * from test.datatypes
         }
     ]
 ]
-
 ```
 
-Please see the examples folder for more sample configurations.
+Please see the [examples folder](./examples) for more sample configurations.
 
-##Key Generators
-
+## Key Generators
 
 Key Generators generate the keys which are used for each record. 
 
@@ -195,7 +202,3 @@ Key Generators generate the keys which are used for each record.
 | RandomKeyGenerator | Random number between 0 and key length | 73 |
 | RandomStringKeyGenerator | Random alpha-numeric string of key length size| sdf3nfg56df4liu333 |
 | SequentialKeyGenerator | non-thread safe numeric key | 1 2 3 4 5..n |
-
-
-
-
