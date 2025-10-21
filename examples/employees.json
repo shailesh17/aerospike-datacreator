@@ -19,7 +19,7 @@
 		  "set" : "employees",
 		  "threads" : 1,
 		  "limit" : 10000,	  
-		  "keyGenerator" : "com.rashidmayes.pub.dc.keygen.SequentialKeyGenerator",
+		  "keyGenerator" : "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
 		  "keyLength" : 16
 		},
 		
@@ -30,7 +30,7 @@
 		  "set" : "employees",
 		  "threads" : 1,
 		  "limit" : 10000,	  
-		  "keyGenerator" : "com.rashidmayes.pub.dc.keygen.PipedKeyGenerator",
+		  "keyGenerator" : "com.aerospike.ps.priv.dc.keygen.PipedKeyGenerator",
 		  "keyLength" : 60
 		}			
 	],	
@@ -46,7 +46,7 @@
 			"threads": 3,
 			"preGenerate": 0,
 			"limit": 10000,
-			"keyGenerator": "com.rashidmayes.pub.dc.keygen.SequentialKeyGenerator",
+			"keyGenerator": "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
 			"keyLength": 16,
 			"binSpecs": [
 				{
@@ -93,7 +93,7 @@
 			"threads": 1,
 			"preGenerate": 0,
 			"limit": 10000,
-			"keyGenerator": "com.rashidmayes.pub.dc.keygen.SequentialKeyGenerator",
+			"keyGenerator": "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
 			"keyLength": 16,
 			"binSpecs": [
 				{

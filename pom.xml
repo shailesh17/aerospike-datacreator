@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.rashidmayes.pub.dc</groupId>
+	<groupId>com.aerospike.ps.priv.dc</groupId>
 	<artifactId>DataCreator</artifactId>
 	<version>2.0.1</version>
 	<name>Generic Data Creator</name>
@@ -91,21 +91,21 @@
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
 			<artifactId>metrics-core</artifactId>
-			<version>4.1.11</version>
+			<version>4.2.33</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-jvm -->
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
 			<artifactId>metrics-jvm</artifactId>
-			<version>4.1.11</version>
+			<version>4.2.33</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-graphite -->
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
 			<artifactId>metrics-graphite</artifactId>
-			<version>4.1.11</version>
+			<version>4.2.33</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
@@ -159,8 +159,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>11</source>
-					<target>11</target>
+					<source>21</source>
+					<target>21</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -170,7 +170,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.rashidmayes.pub.dc.GenericDataCreator</mainClass>
+							<mainClass>com.aerospike.ps.priv.dc.GenericDataCreator</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -184,7 +184,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.rashidmayes.pub.dc.GenericDataCreator</mainClass>
+							<mainClass>com.aerospike.ps.priv.dc.GenericDataCreator</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

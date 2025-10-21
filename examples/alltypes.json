@@ -1,6 +1,6 @@
 {
 	"host" : "127.0.0.1",
-	"port" : 3000,
+	"port" : 3101,
 
 	"clientPolicy" : {
 	  	"writePolicyDefault" : {
@@ -21,7 +21,7 @@
 		  "threads" : 10,
 		  "preGenerate" : 0,
 		  "limit" : 1000,	  
-		  "keyGenerator" : "com.rashidmayes.pub.dc.keygen.SequentialKeyGenerator",
+		  "keyGenerator" : "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
 		  "keyLength" : 16,
 		  
 		  "binSpecs" : [

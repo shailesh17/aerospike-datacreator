@@ -9,7 +9,7 @@
 	  	}
 	},
 		  
-	"reportInterval" : 10,
+	"reportInterval" : 2,
 	"duration" : 100,
 	
 	"reads" : [
@@ -18,10 +18,10 @@
 		  "rateLimit" : 0,
 		  "namespace" : "test",
 		  "set" : "examples",
-		  "threads" : 20,
-		  "limit" : 100000,	  
+		  "threads" : 1,
+		  "limit" : 100,	  
 		  "keyGenerator" : "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
-		  "keyLength" : 160
+		  "keyLength" : 16
 		}	
 	],
 	
@@ -29,20 +29,18 @@
 	"writes" : [
 		{
 		  "sameRecordDifferentKey" : false,
-		  "rateLimit" : 0,
+		  "rateLimit" : 30000000,
 		  "namespace" : "test",
 		  "set" : "examples",
-		  "threads" : 20,
+		  "threads" : 2,
 		  "preGenerate" : 0,
-		  "limit" : 10000000,	  
+		  "limit" : 1000,	  
 		  "keyGenerator" : "com.aerospike.ps.priv.dc.keygen.SequentialKeyGenerator",
-		  "keyLength" : 160,
+		  "keyLength" : 16,
 		  
 		  "binSpecs" : [
 		 		{
 		 		  "bins" : {
-		 		  	"pick1" : { "type" : "PICK", "size" : 1, "elementType": "INT", "values" : [ 11,25,37 ]},
-		 		    "pick2" : { "type" : "PICK", "size" : 1, "elementType": "STRING", "values" : [ "apple", "orange", "pear" ]},
 		 		  	"string" : { "type" : "STRING", "size" : 8 },
 				  	"double" : { "type" : "DOUBLE", "size" : 100 },
 				  	"int" : { "type" : "INT", "size" : 1000 },
@@ -53,7 +51,8 @@
 				  	"city" : { "type" : "US_CITY", "size" : 1 },	
 				  	"state" : { "type" : "US_STATE", "size" : 2 },
 				  	"list" : { "type" : "LIST", "size" : 10, "elementType": "STRING", "elementLength" : 5 },
-				  	"map" : { "type" : "MAP", "size" : 5, "keyType": "US_FIRST_NAME", "keyLength": 8, "elementType" : "STRING", "elementLength": 5 },
+				  	"map" : { "type" : "MAP", "size" : 5, "keyType": "STRING", "keyLength": 8, "elementType" : "STRING", "elementLength": 5 },
+				  	"geo" : { "type" : "GEOSPATIAL", "size" : 1000 },
 				  	"delimited" : { "type" : "DELIMITED_STRING", "size" : 30, "elementType": "STRING", "elementLength" : 3 },
 				  	"ip" : { "type" : "IP", "size" : 10 },
 		 		  	"ipport" : { "type" : "IPPORT", "size" : 10 },
